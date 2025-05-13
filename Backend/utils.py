@@ -15,6 +15,7 @@ def regula_falsi_modificada(N, a, b, error_exp, max_iter=100):
 
     # --- Paso a/b: inicialización estilo bisección ---
     if fa * fb > 0:
+        return None, tabla
         # mismo signo → x0 = a, ef = b
         x0, ef = a, b
         fx0, fef = fa, fb
@@ -56,3 +57,4 @@ def regula_falsi_modificada(N, a, b, error_exp, max_iter=100):
             fx0 /= 2
 
     # Si agotamos iteraciones:
+    return x, tabla
