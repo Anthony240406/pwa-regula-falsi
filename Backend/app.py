@@ -22,6 +22,8 @@ def calcula_raiz():
 
     a, b = 0.0, max(1.0, N)
     raiz, tabla = regula_falsi_modificada(N, a, b, error)
+    error_exp = int(data.get("exp", 6))
+    raiz, tabla = regula_falsi_modificada(N, a, b, error_exp)
     return jsonify({"raiz": raiz, "tabla": tabla})
 
 if __name__ == "__main__":
