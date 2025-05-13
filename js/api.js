@@ -1,6 +1,6 @@
 // frontend/js/api.js
 export async function calcula(N, eps) {
-  const resp = await fetch('https://TU-SERVICIO.onrender.com/api/regula', {
+  const resp = await fetch('https://pwa-regula-falsi.onrender.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ N, error: eps })
