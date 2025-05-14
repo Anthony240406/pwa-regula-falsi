@@ -14,25 +14,21 @@
   <div class="container">
     <h1>Regula Falsi Modificado</h1>
     <form id="calc-form">
-      <input id="inputN" type="number" placeholder="Número N" required>
-      <input id="inputEps" type="number" step="any" placeholder="Error ε" required>
+      <input id="inputN"   type="number" placeholder="Número N" required>
+      <input id="inputExp" type="number" placeholder="Exponente x (ε = 10⁻ˣ)" required>
       <button type="submit">Calcular</button>
     </form>
     <div id="resultado"></div>
     <table id="tabla">
       <thead>
         <tr>
-          <th>n</th>
-          <th>xₙ</th>
-          <th>f(xₙ)</th>
-          <th>|xₙ−xₙ₋₁|</th>
+          <th>n</th><th>xₙ</th><th>f(xₙ)</th><th>|xₙ−xₙ₋₁|</th>
         </tr>
       </thead>
       <tbody></tbody>
     </table>
   </div>
 
-  <script type="module" src="js/app.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js');
