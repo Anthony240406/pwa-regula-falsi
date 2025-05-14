@@ -2,16 +2,16 @@
 
 const CACHE_NAME = 'regula-v4';
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/css/styles.css',
-  '/js/app.js',
-  '/js/api.js',
-  '/manifest.json',
-  '/service-worker.js',
-  '/images/icons/icon-192.png',
-  '/images/icons/icon-512.png'
-];
+   './',
+   'index.html',
+   'css/styles.css',
+   'js/app.js',
+   'js/api.js',
+   'manifest.json',
+   'service-worker.js',
+   'images/icons/icon-192.png',
+   'images/icons/icon-512.png'
+ ];
 
 self.addEventListener('install', event => {
   self.skipWaiting();
