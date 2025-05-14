@@ -35,7 +35,7 @@ h1 {
   color: #222;
 }
 
-/* 5. Formulario y inputs */
+/* 5. Formulario e inputs */
 form {
   display: flex;
   flex-direction: column;
@@ -67,6 +67,7 @@ form button {
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.2s ease;
+  font-weight: bold;         /* negrita en “Calcular” */
 }
 
 form button:hover {
@@ -75,7 +76,8 @@ form button:hover {
 
 /* 7. Resultado aproximado */
 #resultado {
-  font-size: 1.125rem;
+  font-size: 1.25rem;        /* un poco más grande */
+  font-weight: 600;          /* resaltado */
   margin-bottom: 1rem;
   text-align: center;
   color: #444;
@@ -90,7 +92,7 @@ table {
 }
 
 thead {
-  background: #5b9bd5;
+  background-color: #4a89c4; /* encabezado con color agradable */
   color: #fff;
 }
 
