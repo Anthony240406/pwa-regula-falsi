@@ -1,6 +1,6 @@
 // service-worker.js
 
-const CACHE_NAME = 'regula-falsi-v2';  // <-- incrementa el número cuando actualices CSS
+const CACHE_NAME = 'regula-falsi-v3';  // <-- incrementa el número cuando actualices CSS
 const ASSETS = [
   '/',
   '/index.html',
