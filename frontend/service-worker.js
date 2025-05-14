@@ -1,6 +1,6 @@
 // service-worker.js
 
-const CACHE_NAME = 'regula-falsi-v3';  // <-- incrementa el número cuando actualices CSS
+const CACHE_NAME = 'regula-v4';
 const ASSETS = [
   '/',
   '/index.html',
@@ -8,13 +8,12 @@ const ASSETS = [
   '/js/app.js',
   '/js/api.js',
   '/manifest.json',
+  '/service-worker.js',
   '/images/icons/icon-192.png',
-  '/images/icons/icon-512.png',
-  // añade aquí cualquier otro archivo estático
+  '/images/icons/icon-512.png'
 ];
 
 self.addEventListener('install', event => {
-  // Toma el control inmediatamente
   self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -23,7 +22,6 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-  // Controla todas las pestañas sin esperar recarga
   event.waitUntil(
     caches.keys().then(keys =>
       Promise.all(
@@ -36,11 +34,9 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  // Network-first: intenta la red, si falla sirve del cache
   event.respondWith(
     fetch(event.request)
       .then(res => {
-        // Actualiza el cache con la nueva respuesta
         const clone = res.clone();
         caches.open(CACHE_NAME).then(c => c.put(event.request, clone));
         return res;
