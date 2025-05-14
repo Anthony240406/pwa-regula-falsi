@@ -1,3 +1,5 @@
+# backend/app.py
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from utils import regula_falsi_modificada
@@ -10,7 +12,7 @@ def calcula_raiz():
     data = request.get_json() or {}
     try:
         N   = float(data.get("N", 0))
-        exp = int(data.get("exp", 6))
+        exp = int(  data.get("exp", 6) )
     except (ValueError, TypeError):
         return jsonify({"error": "Parámetros inválidos"}), 400
 

@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const exp = parseInt  (document.getElementById('inputExp').value, 10);
 
     resultado.textContent = 'Calculando…';
-    tbody.innerHTML = '';      // **LIMPIAMOS la tabla**
+    tbody.innerHTML = '';      // limpiamos filas previas
 
     try {
       const { raiz, tabla, error } = await calcula(N, exp);
@@ -24,7 +24,6 @@ window.addEventListener('DOMContentLoaded', () => {
       }
       resultado.textContent = `≈ ${raiz.toFixed(6)}`;
 
-      // Pintar solo las filas que haya en `tabla`
       tabla.forEach(fila => {
         const tr = document.createElement('tr');
         fila.forEach(c => {
