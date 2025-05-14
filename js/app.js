@@ -8,28 +8,23 @@ window.addEventListener('DOMContentLoaded', () => {
   const tablaEl   = document.getElementById('tabla');
   const tbody     = tablaEl.querySelector('tbody');
 
-  console.log('DOM cargado, inicializando form…');
-
   form.addEventListener('submit', async e => {
     e.preventDefault();
-
     const N   = parseFloat(document.getElementById('inputN').value);
     const exp = parseInt  (document.getElementById('inputExp').value, 10);
+
     resultado.textContent = 'Calculando…';
+    tbody.innerHTML = '';      // **LIMPIAMOS la tabla**
 
     try {
       const { raiz, tabla, error } = await calcula(N, exp);
       if (error) {
         resultado.textContent = `Error: ${error}`;
-        tablaEl.hidden = true;
         return;
       }
+      resultado.textContent = `≈ ${raiz.toFixed(6)}`;
 
-      resultado.textContent = raiz !== null
-        ? `≈ ${raiz.toFixed(6)}`
-        : 'Intervalo inválido';
-
-      tbody.innerHTML = '';
+      // Pintar solo las filas que haya en `tabla`
       tabla.forEach(fila => {
         const tr = document.createElement('tr');
         fila.forEach(c => {
@@ -39,10 +34,8 @@ window.addEventListener('DOMContentLoaded', () => {
         });
         tbody.appendChild(tr);
       });
-      tablaEl.hidden = false;
-    } catch (err) {
+    } catch {
       resultado.textContent = 'Error de red o servidor';
-      console.error(err);
     }
   });
 });
