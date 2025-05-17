@@ -10,20 +10,26 @@ window.addEventListener('DOMContentLoaded', () => {
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
+
+    // Leer valores del formulario
     const N   = parseFloat(document.getElementById('inputN').value);
     const exp = parseInt  (document.getElementById('inputExp').value, 10);
 
     resultado.textContent = 'Calculando…';
-    tbody.innerHTML = '';      // limpiamos filas previas
+    tbody.innerHTML = '';  // limpiar tabla
 
     try {
+      // Llamada a la API
       const { raiz, tabla, error } = await calcula(N, exp);
       if (error) {
         resultado.textContent = `Error: ${error}`;
         return;
       }
+
+      // Mostrar resultado
       resultado.textContent = `≈ ${raiz.toFixed(6)}`;
 
+      // Pintar cada fila de la tabla
       tabla.forEach(fila => {
         const tr = document.createElement('tr');
         fila.forEach(c => {
@@ -33,7 +39,8 @@ window.addEventListener('DOMContentLoaded', () => {
         });
         tbody.appendChild(tr);
       });
-    } catch {
+    } catch (err) {
+      console.error(err);
       resultado.textContent = 'Error de red o servidor';
     }
   });
