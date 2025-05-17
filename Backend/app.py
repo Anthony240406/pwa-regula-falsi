@@ -2,7 +2,7 @@
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from utils import regula_falsi_modificada
+from utils import regula_falsi_modificada  # alias definido en utils.py
 
 app = Flask(__name__)
 CORS(app)

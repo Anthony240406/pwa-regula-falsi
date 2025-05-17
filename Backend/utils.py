@@ -5,7 +5,7 @@ import math
 def f(x, N):
     return x*x - N
 
-def regula_falsi_modificado(N, error_exp, max_iter=100):
+def regula_falsi_modificado_illinois(N, error_exp, max_iter=100):
     """
     Regula Falsi modificado (método de Illinois).
     - Si un extremo (a o b) queda fijo dos veces,
@@ -81,3 +81,5 @@ def regula_falsi_modificado(N, error_exp, max_iter=100):
 
     # Si no converge antes de max_iter, devolvemos la última aproximación
     return x_n, tabla
+
+regula_falsi_modificada = regula_falsi_modificado_illinois
