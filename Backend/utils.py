@@ -45,8 +45,8 @@ def regula_falsi_modificado_illinois(N, error_exp, max_iter=100):
 
         tabla.append([
             n,
-            f"{a:.15f}",      # extremo fijo
-            f"{b:.15f}",      # extremo variable
+            f"{a:.15f}",
+            f"{b:.15f}",
             f"{x_n:.15f}",
             f"{fxn:.15f}",
             f"{salto:.15f}"
