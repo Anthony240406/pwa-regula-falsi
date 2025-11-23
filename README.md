@@ -3,7 +3,6 @@
 Aplicación Web Progresiva (PWA) que implementa el método numérico **Regula Falsi modificado (Método de Illinois)** para calcular raíces cuadradas. La aplicación permite calcular la raíz cuadrada de cualquier número mediante un método iterativo, mostrando una tabla detallada con todas las iteraciones del algoritmo.
 
 ## Características
-
 - **Progressive Web App (PWA)**: Instalable en dispositivos móviles y escritorio
 - **Funcionamiento offline**: Service Worker para cachear recursos
 - **Método Regula Falsi modificado (Illinois)**: Optimización del método clásico para evitar estancamiento
@@ -121,17 +120,6 @@ Cualquier servidor web (Apache, Nginx, etc.) puede servir los archivos estático
      - Valor de la función f(xₙ)
      - Salto entre iteraciones |xₙ - xₙ₋₁|
 
-### Ejemplo
-
-Calcular √25 con precisión de 10⁻⁶:
-- N: `25`
-- Exponente: `6`
-- Resultado esperado: `≈ 5.000000`
-
-## Algoritmo: Regula Falsi Modificado (Método de Illinois)
-
-El método implementado es una variante mejorada del método Regula Falsi clásico que soluciona el problema de convergencia lenta cuando uno de los extremos se mantiene fijo durante varias iteraciones.
-
 ### Características del algoritmo:
 
 1. **Intervalo inicial**: Se calcula automáticamente basándose en `[floor(√N), ceil(√N)]` o `[0, max(1, N)]`
@@ -168,25 +156,3 @@ La aplicación puede instalarse como una PWA en dispositivos móviles y de escri
 2. Buscar el botón "Instalar" o "Add to Home Screen" en el navegador
 3. Confirmar la instalación
 4. La aplicación estará disponible como una app independiente
-
-## Configuración Avanzada
-
-### Generar Iconos
-
-Para generar iconos de diferentes tamaños a partir de una imagen original:
-
-```bash
-pip install Pillow
-python generate_icons.py
-```
-
-La imagen original debe estar en `frontend/images/icons/original.png` (recomendado: 1024×1024px).
-
-### Modificar la Precisión
-
-Editar el valor de `max_iter` en `Backend/utils.py` para cambiar el número máximo de iteraciones permitidas.
-
-### Cambiar la Función Objetivo
-
-Modificar la función `f(x, N)` en `Backend/utils.py` para cambiar la función cuya raíz se desea calcular.
-
