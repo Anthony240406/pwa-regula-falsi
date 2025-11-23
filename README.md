@@ -135,18 +135,8 @@ Cualquier servidor web (Apache, Nginx, etc.) puede servir los archivos estático
 4. **Función objetivo**: f(x) = x² - N
 
 ## Despliegue
-
-### Backend en Render.com
-
-### Frontend
-
-El frontend puede desplegarse en cualquier servicio de hosting estático:
-- **Netlify**
-- **Vercel**
-- **GitHub Pages**
-- **Firebase Hosting**
-
-**Importante**: Actualizar la URL del API en `frontend/js/api.js` con la URL de tu backend desplegado.
+- Backend en Render
+- Frontend en GithubPages
 
 ## Instalación como PWA
 
